@@ -3828,12 +3828,12 @@ const int MAX_ITERATIONS = `+t.maxIterations+`;
 `+t.colorGLSL+`
 `+fragFooter;return{uniforms:t.uniforms,frag:e,vert:threeJSVertexSource,error:t.error,geoGLSL:t.geoGLSL,colorGLSL:t.colorGLSL}}function sculptToThreeJSMaterial(n,t){var e=sculptToThreeJSShaderSource(n),s=makeMaterial(e.uniforms,e.vert,e.frag,t);return s.uniformDescriptions=e.uniforms,s}function createSculptureWithGeometry(n,t){var e=arguments.length>2&&arguments[2]!==void 0?arguments[2]:function(){return{}},s=arguments.length>3&&arguments[3]!==void 0?arguments[3]:{};n.computeBoundingSphere();var a="radius"in s?s.radius:n.boundingSphere.radius;return s.radius=a,s.geometry=n,createSculpture(t,e,s)}function createSculpture(n){var t=arguments.length>1&&arguments[1]!==void 0?arguments[1]:function(){return{}},e=arguments.length>2&&arguments[2]!==void 0?arguments[2]:{};n=convertFunctionToString(n);var s="radius"in e?e.radius:2,a;if("geometry"in e)a=e.geometry;else{var u="segments"in e?e.segments:8;a=new SphereGeometry(s,u,u)}var c=sculptToThreeJSMaterial(n);c.uniforms.opacity.value=1,c.uniforms.mouse.value=new Vector3,c.uniforms._scale.value=s;var h=new Mesh(a,c);return h.onBeforeRender=function(d,v,_,b,A,D){var C=t();if(_typeof(C)!=="object")throw"createSculpture takes, (source, uniformCallback, params) the uniformCallback must be a function that returns a dictionary of uniforms to update";for(var y=0,E=Object.entries(C);y<E.length;y++){var x=_slicedToArray(E[y],2),S=x[0],T=x[1];A.uniforms[S].value=T}},h}function uniformDescriptionToThreeJSFormat(n,t){var e={};return t&&t!==void 0&&t.msdfTexture!==void 0&&(e.msdf={value:t.msdfTexture||new Texture}),n.forEach(function(s){s.type==="float"?e[s.name]={value:s.value}:s.type==="vec2"?e[s.name]={value:new Vector2(s.value.x,s.value.y)}:s.type==="vec3"?e[s.name]={value:new Vector3(s.value.x,s.value.y,s.value.z)}:s.type==="vec4"&&(e[s.name]={value:new Vector4(s.value.x,s.value.y,s.value.z,s.value.w)})}),e}function makeMaterial(n,t,e,s){var a=new ShaderMaterial({uniforms:uniformDescriptionToThreeJSFormat(n,s),vertexShader:t,fragmentShader:e,transparent:!0,side:BackSide});return a.extensions.fragDepth=!1,a}function uniformToCpp(n){for(var t="",e=0;e<n.length;e++){var s=n[e];if(t+=s.type+" "+s.name+" = ",typeof s.value=="number")t+=s.value+1e-7+"f";else{t+="vec"+s.value.length+"(";for(var a=0;a<s.value.length;a++)t+=s.value[a]+1e-7+"f",a+1<s.value.length&&(t+=", ");t+=")"}t+=`;
 `}return t}uniformToCpp(baseUniforms());console.log("using shader-park version: 0.1.14");const spCode=`
-rotateY(time * PI / 2 + time*.5);
-rotateX(time * PI / 2);
+// rotateY(time * PI / 2 + time*.5);
+// rotateX(time * PI / 2);
 metal(.5);
 shine(.4);
 color(getRayDirection()+.2);
-rotateY(getRayDirection().y*4+time)
+// rotateY(getRayDirection().y*4+time)
 boxFrame(vec3(.4), .02);
 expand(.02);
 blend(nsin(time)*.6)
