@@ -22,7 +22,7 @@
 
 </template>
 <script>
-import {sculptToMinimalRenderer,createSculptureWithGeometry} from 'shader-park-core';
+import {sculptToMinimalRenderer,createSculptureWithGeometry} from 'shader-park-core/dist/shader-park-core.esm';
 import { nextTick } from 'vue'
 import {spCode} from './spCode.js';
 import UI from './components/ui.vue';
