@@ -8,7 +8,7 @@
     >
       <a-entity
         sp-aframe=" "
-        position="0 -2 0"
+        position="0 -10 0"
         scale="0.8 0.8 0.8"
         look-at="[gps-projected-camera]"
       ></a-entity>
@@ -42,7 +42,7 @@ export default {
     shaderShell(){
         AFRAME.registerComponent("sp-aframe", {
         init: function () {
-          this.geometry = new THREE.SphereGeometry(2, 2, 2);
+          this.geometry = new THREE.SphereGeometry(5, 5, 5);
           this.params = {
             time: 0.0,
           };
@@ -140,7 +140,7 @@ video{
   left: 0;
   background-color: none;
   z-index: 9999;
-  display: flex;
+  display:none;
   justify-content: center;
   align-items: center;
 }
