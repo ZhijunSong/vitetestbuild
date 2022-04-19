@@ -1,6 +1,7 @@
 <template>
-<div class="home">
-    <h1>Home</h1>
+<v-app class="home">
+    <v-main>
+
     <canvas ref="myCanvas"></canvas> 
     <a-scene
       vr-mode-ui="enabled: false"
@@ -16,7 +17,8 @@
 
     </a-scene>
     <UI />
-</div>
+    </v-main>
+</v-app>
     
 </template>
 <script>

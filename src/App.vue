@@ -1,16 +1,48 @@
 <template>
-   <div class="wrapper">
-     <router-link to="/vitetestbuild/">Intro</router-link>
-     <router-link to="/vitetestbuild/about">About</router-link>
-     <router-link to="/vitetestbuild/app">Home</router-link>
+   <v-app class="wrapper">
+   
+     <!-- <v-app-bar  color="white"
+        prominent>
+     <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+     <v-app-bar-icon></v-app-bar-icon> -->
+     <!-- </v-app-bar> --> 
+    <v-navigation-drawer   
+     v-model="drawer"
+      bottom
+      temporary>
+     <li><router-link to="/vitetestbuild/">Intro</router-link></li><br>
+
+     <li><router-link to="/vitetestbuild/about">About</router-link></li><br>
+
+     <li><router-link to="/vitetestbuild/app">Home</router-link></li><br>
+     </v-navigation-drawer>
+    <v-main>
+    <v-btn id="menu">
+      <v-app-bar-nav-icon
+           color="white"
+          @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      </v-btn>
 
      <router-view></router-view>
-   </div>
+    </v-main>
+   </v-app>
 
 </template>
-
+<script>
+  export default {
+    data () {
+      return {
+        drawer: null,
+      }
+    },
+  }
+</script>
 
 <style>
+button.v-btn.v-btn--elevated.v-btn--icon.v-theme--light.bg-white.v-btn--density-default.v-btn--size-default.v-btn--variant-contained.v-app-bar-nav-icon {
+    box-shadow: none;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,10 +1,35 @@
 <template>
 <div class="Intro">
-    <h1>Intro</h1>
-    <canvas ref="myCanvas"></canvas> 
+    <p>Agreement</p>
+    <v-list>
+    <v-checkbox
+      v-model="checkbox1"
+      :label="`I agree`"
+    ></v-checkbox>
+    <v-checkbox
+      v-model="checkbox2"
+      :label="`Disagree`"
+    ></v-checkbox>
+    </v-list>
+    <v-list>
+
+    </v-list>
+    <v-btn>Enter</v-btn>
+ 
 </div>
     
 </template>
+<script>
+  export default {
+    data () {
+      return {
+        checkbox1: false,
+        checkbox2: false,
+
+      }
+    },
+  }
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
