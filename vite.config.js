@@ -9,7 +9,7 @@ export default defineConfig({
   },
   
   publicPath: '/vitetestbuild/',
-  base:'/',
+  base:'/vitetestbuild/',
   plugins: [
     vue(),
     vuetify({ autoImport: true })
