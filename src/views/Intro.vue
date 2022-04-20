@@ -60,7 +60,7 @@
     methods:{
       agree(){
         if(this.checkbox2==true&&this.checkbox1==false){
-          this.$router.push('/vitetestbuild/app'); 
+          this.$router.push('/app'); 
         }else{
           this.checkbox2 ==false;
           this.checkbox1 ==false;

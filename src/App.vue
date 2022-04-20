@@ -14,9 +14,9 @@
     >
      <!-- <li><router-link to="/">Intro</router-link></li><br> -->
 
-     <li><router-link to="/vitetestbuild/about">About</router-link></li><br>
+     <li><router-link to="/about">About</router-link></li><br>
 
-     <li><router-link to="/vitetestbuild/app">Home</router-link></li><br>
+     <li><router-link to="/app">Home</router-link></li><br>
      </v-navigation-drawer>
     <v-main>
     <v-btn id="menu">
