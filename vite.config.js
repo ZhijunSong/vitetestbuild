@@ -8,7 +8,7 @@ export default defineConfig({
     '@':path.resolve(__dirname,'./src' )
   },
   publicPath: '/vitetestbuild/',
-  // base:'/vitetestbuild/',
+  base:'/vitetestbuild/',
   plugins: [
     vue(),
     vuetify({ autoImport: true })

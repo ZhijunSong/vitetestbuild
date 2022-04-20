@@ -12,6 +12,7 @@
     "@vuetify/vite-plugin": "^1.0.0-alpha.10",
     "howler": "^2.2.3",
     "shader-park-core": "^0.1.14",
+    "vercel": "^24.1.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
   },
