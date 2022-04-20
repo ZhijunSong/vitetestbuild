@@ -9,7 +9,11 @@ export default defineConfig({
   },
   
   publicPath: '/vitetestbuild/',
+<<<<<<< HEAD
   base:'/vitetestbuild/',
+=======
+  base:'/dist/',
+>>>>>>> parent of 845e68f (new build update resolve. alias)
   plugins: [
     vue(),
     vuetify({ autoImport: true })
