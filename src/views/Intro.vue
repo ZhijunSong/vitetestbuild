@@ -1,20 +1,48 @@
 <template>
 <div class="Intro">
-    <p>Agreement</p>
-    <v-list>
+    <v-col sm="12">
+
+<v-card
+  class="pa-2"
+  elevation="2"
+  tile
+  > 
+  
+  <v-card-title>Disclaimer</v-card-title>
+  <v-row>
+    <v-card-text >
+      This product may require to access your location data. 
+      If you consent with this requirement. Please click agree and enter the expeirence.<br>
+      <strong style="color:red">Warning:</strong> 
+      Be awared your surroundings and traffics when going through this experience.
+      Submitting the agree button is meaning that you are responsible for your own safety during this expeirence. <div class=""></div>
+
+    </v-card-text>
+     
+  </v-row>
+  <v-row no-gutters class="mb-6" justify="center">
+           <v-col lg="2">
     <v-checkbox
       v-model="checkbox1"
-      :label="`I agree`"
+      :label="`disagree`"
     ></v-checkbox>
+        </v-col>
+      <!-- <v-col> -->
+        <v-col lg="2">
     <v-checkbox
       v-model="checkbox2"
-      :label="`Disagree`"
+      :label="`agree`"
     ></v-checkbox>
-    </v-list>
-    <v-list>
+        </v-col>
 
-    </v-list>
-    <v-btn>Enter</v-btn>
+ 
+    </v-row>
+   <v-row sm="12" justify="center">
+    <v-btn @click="agree()">Confirm</v-btn>
+    </v-row>
+    </v-card>
+  </v-col>
+
  
 </div>
     
@@ -28,6 +56,19 @@
 
       }
     },
+    methods:{
+      agree(){
+        if(this.checkbox2==true&&this.checkbox1==false){
+          this.$router.push('/vitetestcbuild/app'); 
+        }else{
+          this.checkbox2 ==false;
+          this.checkbox1 ==false;
+        }
+
+      },
+
+    },
+
   }
 </script>
 <style>

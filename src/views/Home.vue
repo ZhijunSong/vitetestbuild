@@ -1,23 +1,28 @@
 <template>
-<v-app class="home">
-    <v-main>
+<v-app class="home">  
+    <!-- <v-app-bar>
 
-    <canvas ref="myCanvas"></canvas> 
+    </v-app-bar> -->
+
+    <v-main>
     <a-scene
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
       <a-entity
         sp-aframe=" "
-        position="0 -10 0"
+        position="0 -100 0"
         scale="0.8 0.8 0.8"
         look-at="[gps-projected-camera]"
       ></a-entity>
       <a-camera fov="40" gps-projected-camera rotation-reader> </a-camera>
 
     </a-scene>
-    <UI />
+    <!-- <canvas ref="myCanvas"></canvas>  -->
+    
+
     </v-main>
+    <UI/>
 </v-app>
     
 </template>
@@ -45,6 +50,7 @@ export default {
           this.geometry = new THREE.SphereGeometry(40,40,40);
           this.params = {
             time: 0.0,
+            _scale:1.2,
             // _scale = 1.2
           };
           let mesh = createSculptureWithGeometry(this.geometry, spCode, () => ({
@@ -63,12 +69,6 @@ export default {
       });
       }
   },
-  // mounted: function() {
-  //       // this.getLocation();
-  //       this.shaderShell();
-
-  // }
-
 }
 // const count = ref(0)
 </script>

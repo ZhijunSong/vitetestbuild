@@ -9,8 +9,10 @@
     <v-navigation-drawer   
      v-model="drawer"
       bottom
-      temporary>
-     <li><router-link to="/vitetestbuild/">Intro</router-link></li><br>
+      temporary
+      id="drawers"
+    >
+     <!-- <li><router-link to="/">Intro</router-link></li><br> -->
 
      <li><router-link to="/vitetestbuild/about">About</router-link></li><br>
 
@@ -18,11 +20,12 @@
      </v-navigation-drawer>
     <v-main>
     <v-btn id="menu">
-      <v-app-bar-nav-icon
+    <v-app-bar-nav-icon
            color="white"
           @click.stop="drawer = !drawer"
-      ></v-app-bar-nav-icon>
-      </v-btn>
+    >
+    </v-app-bar-nav-icon>
+    </v-btn>
 
      <router-view></router-view>
     </v-main>
@@ -115,6 +118,13 @@ video{
   text-align: center;
   font-size: 1.25em;
   color: rgb(0, 0, 0);
+}
+#menu{
+  position:sticky;
+  display: block;
+  left:20px;
+  top:20px;
+  z-index: 999;
 }
 
   
