@@ -44,12 +44,7 @@ export default{
     soundsrc:"src/assets/Ambience underwaterwav.mp3",
     }
   },
-  async mounted() {
-    await nextTick();
-    this.shaderShell();
-  // let canvas = this.$refs.myCanvas;
-  //  sculptToMinimalRenderer(canvas, spCode);
-  },
+ 
 
   methods:{
     shaderShell(){
@@ -59,8 +54,6 @@ export default{
           this.params = {
             time: 0.0,
             _scale:1.2,
-            // sound: 0.,
-            // _scale = 1.2
           };
           let mesh = createSculptureWithGeometry(this.geometry, spCode, () => ({
             time: this.params.time,
@@ -79,6 +72,12 @@ export default{
         },
       });
       }
+  },
+   async mounted() {
+    await nextTick();
+    this.shaderShell();
+  // let canvas = this.$refs.myCanvas;
+  //  sculptToMinimalRenderer(canvas, spCode);
   },
 
 

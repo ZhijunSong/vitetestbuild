@@ -7,7 +7,10 @@ export default defineConfig({
   alias:{
     '@':path.resolve(__dirname,'./src' )
   },
-  base:'/vitetestbuild/',
+  publicPath: process.env.NODE_ENV === 'production'
+  ? '/vitetestbuild/'
+  : '/',
+  // base:'/vitetestbuild/',
   plugins: [
     vue(),
     vuetify({ autoImport: true })
