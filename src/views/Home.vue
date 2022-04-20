@@ -1,74 +1,32 @@
 <template>
 <v-app class="home">  
     <!-- <v-app-bar>
-
     </v-app-bar> -->
-
     <v-main>
-    <a-scene
-      vr-mode-ui="enabled: false"
-      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-    >
-      <a-entity
-        sp-aframe=" "
-        position="0 -100 0"
-        scale="0.8 0.8 0.8"
-        look-at="[gps-projected-camera]"
-      ></a-entity>
-      <a-camera fov="40" gps-projected-camera rotation-reader> </a-camera>
+    <aframecomponent></aframecomponent>
 
-    </a-scene>
-    <!-- <canvas ref="myCanvas"></canvas>  -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
     
-
     </v-main>
+
     <UI/>
 </v-app>
     
 </template>
 <script>
-import {sculptToMinimalRenderer,createSculptureWithGeometry} from 'shader-park-core';
-import { nextTick } from 'vue'
-import {spCode} from '../spCode.js';
 import UI from '../components/ui.vue';
-
+import aframecomponent from '../components/aframe.vue';
+import {Howl, Howler} from 'howler';
+// import arjs from '@ar-js-org/ar.js';
 export default {
+  
   components:{
-    UI
+    UI,
+    aframecomponent
   },
-  async mounted() {
-    await nextTick();
-    this.shaderShell();
-  // let canvas = this.$refs.myCanvas;
-  //  sculptToMinimalRenderer(canvas, spCode);
-  },
-
-  methods:{
-    shaderShell(){
-        AFRAME.registerComponent("sp-aframe", {
-        init: function () {
-          this.geometry = new THREE.SphereGeometry(40,40,40);
-          this.params = {
-            time: 0.0,
-            _scale:1.2,
-            // _scale = 1.2
-          };
-          let mesh = createSculptureWithGeometry(this.geometry, spCode, () => ({
-            time: this.params.time,
-          }));
-          this.material = new THREE.MeshStandardMaterial();
-          this.mesh = new THREE.Mesh(this.geometry, this.material);
-          this.mesh.material = mesh.material;
-          this.mesh.onBeforeRender = mesh.onBeforeRender;
-          this.el.setObject3D("mesh", this.mesh);
-          // this.el.object3D.scale.set(0.1,0.1,0.1);
-        },
-        tick: function (time, timeDelta) {
-          this.params.time += 0.01;
-        },
-      });
-      }
-  },
+  
 }
 // const count = ref(0)
 </script>

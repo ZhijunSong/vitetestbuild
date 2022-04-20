@@ -1,6 +1,7 @@
 
 export const spCode =  `
 let scale = 5.0;
+// let soundLevel =input();
 let s = getSpace();
 let n = 0.4*noise(scale * s + time/3);
 let m = 0.5*noise(scale * s);

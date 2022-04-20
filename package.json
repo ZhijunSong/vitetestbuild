@@ -10,6 +10,7 @@
   "dependencies": {
     "@ar-js-org/ar.js": "^3.4.0-alpha-rc2",
     "@vuetify/vite-plugin": "^1.0.0-alpha.10",
+    "howler": "^2.2.3",
     "shader-park-core": "^0.1.14",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"

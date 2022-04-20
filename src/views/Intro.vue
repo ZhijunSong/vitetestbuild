@@ -11,6 +11,7 @@
   <v-card-title>Disclaimer</v-card-title>
   <v-row>
     <v-card-text >
+      Before continuing to the website...<br>
       This product may require to access your location data. 
       If you consent with this requirement. Please click agree and enter the expeirence.<br>
       <strong style="color:red">Warning:</strong> 
@@ -59,7 +60,7 @@
     methods:{
       agree(){
         if(this.checkbox2==true&&this.checkbox1==false){
-          this.$router.push('/vitetestcbuild/app'); 
+          this.$router.push('/vitetestbuild/app'); 
         }else{
           this.checkbox2 ==false;
           this.checkbox1 ==false;
