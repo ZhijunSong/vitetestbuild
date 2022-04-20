@@ -9,7 +9,7 @@ export default defineConfig({
       '@':path.resolve(__dirname,'./src' )
     },
   },
-  publicPath: '/vitetestbuild/',
+  // publicPath: '/vitetestbuild/',
   base:'/vitetestbuild/',
   plugins: [
     vue(),
