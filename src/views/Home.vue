@@ -22,7 +22,7 @@
     
 </template>
 <script>
-import {sculptToMinimalRenderer,createSculptureWithGeometry} from 'shader-park-core/dist/shader-park-core.esm';
+import {sculptToMinimalRenderer,createSculptureWithGeometry} from 'shader-park-core';
 import { nextTick } from 'vue'
 import {spCode} from '../spCode.js';
 import UI from '../components/ui.vue';
@@ -33,7 +33,7 @@ export default {
   },
   async mounted() {
     await nextTick();
-
+    this.shaderShell();
   // let canvas = this.$refs.myCanvas;
   //  sculptToMinimalRenderer(canvas, spCode);
   },
@@ -42,9 +42,10 @@ export default {
     shaderShell(){
         AFRAME.registerComponent("sp-aframe", {
         init: function () {
-          this.geometry = new THREE.SphereGeometry(5, 5, 5);
+          this.geometry = new THREE.SphereGeometry(40,40,40);
           this.params = {
             time: 0.0,
+            // _scale = 1.2
           };
           let mesh = createSculptureWithGeometry(this.geometry, spCode, () => ({
             time: this.params.time,
@@ -62,11 +63,11 @@ export default {
       });
       }
   },
-  mounted: function() {
-        // this.getLocation();
-        this.shaderShell();
+  // mounted: function() {
+  //       // this.getLocation();
+  //       this.shaderShell();
 
-  }
+  // }
 
 }
 // const count = ref(0)
